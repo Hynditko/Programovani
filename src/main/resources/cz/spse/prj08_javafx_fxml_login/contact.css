@@ -1,0 +1,96 @@
+/* Globální nastavení pozadí pro okno správce kontaktů */
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #f0f4f8;
+}
+
+/* --- Styly pro Správce kontaktů --- */
+
+/* Levý panel pro seznam a formulář */
+.contact-list-pane {
+    -fx-background-color: #ffffff; /* Bílé pozadí */
+    -fx-border-color: #dddddd;
+    -fx-border-width: 0 1px 0 0;
+}
+
+/* Pravý panel pro detaily */
+.contact-detail-pane {
+    -fx-background-color: #f0f4f8;
+}
+
+/* Tabulka */
+.table-view {
+    -fx-border-color: transparent;
+}
+.table-view .column-header-background {
+    -fx-background-color: #4e8cff;
+}
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.table-row-cell:selected {
+    -fx-background-color: #a4c6ff; /* Světle modrá při výběru */
+    -fx-text-fill: black;
+}
+.table-row-cell:hover {
+    -fx-background-color: #e0e0e0;
+}
+
+/* Textové labely a nadpisy */
+.header-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-padding: 0 0 10 0;
+}
+.subheader-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #555555;
+    -fx-padding: 10 0 5 0;
+}
+.text-field {
+    -fx-background-color: #eeeeee;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+}
+
+/* Tlačítka */
+.button {
+    -fx-background-color: #4e8cff;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5px;
+    -fx-padding: 5 15 5 15;
+}
+.button:hover {
+    -fx-background-color: #3b73e5;
+}
+
+/* --- Styly detailního panelu --- */
+
+.detail-name {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-padding: 10 0 20 0;
+}
+
+.detail-info-phone, .detail-info-email {
+    -fx-font-size: 18px;
+    -fx-text-fill: #555555;
+    -fx-border-width: 0 0 1px 0;
+    -fx-border-color: #cccccc;
+    -fx-padding: 10 10 10 10;
+    -fx-background-color: #ffffff;
+    -fx-max-width: 400px;
+    -fx-min-width: 400px;
+    -fx-alignment: center-left;
+    -fx-border-radius: 5px;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.1), 5,0.0,0,1);
+}
+
+.status-label {
+    -fx-text-fill: firebrick;
+}
