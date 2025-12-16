@@ -23,8 +23,7 @@
                   <Label styleClass="header-label" text="Mé kontakty" />
                   <TableView fx:id="tableViewKontakty" prefHeight="350.0" prefWidth="330.0" VBox.vgrow="ALWAYS">
                      <columns>
-                        <TableColumn fx:id="colJmeno" prefWidth="165.0" text="Jméno" />
-                        <TableColumn fx:id="colPrijmeni" prefWidth="165.0" text="Příjmení" />
+                        <TableColumn fx:id="colJmeno" prefWidth="330.0" text="Jméno a Příjmení" />
                      </columns>
                   </TableView>
                   <Label styleClass="subheader-label" text="Přidat nový kontakt">

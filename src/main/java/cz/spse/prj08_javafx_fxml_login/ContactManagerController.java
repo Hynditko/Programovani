@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
 import javafx.scene.layout.VBox;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.beans.property.SimpleStringProperty;
 
 public class ContactManagerController {
 
@@ -36,8 +37,8 @@ public class ContactManagerController {
     @FXML
     private TableColumn<Kontakt, String> colJmeno;
 
-    @FXML
-    private TableColumn<Kontakt, String> colPrijmeni;
+//    @FXML
+//    private TableColumn<Kontakt, String> colPrijmeni;
 
     @FXML
     private TableColumn<Kontakt, String> colTelefon;
@@ -75,9 +76,13 @@ public class ContactManagerController {
     // Inicializace
     @FXML
     public void initialize() {
-        // Nastavení, jaké atributy z třídy Kontakt se zobrazí ve sloupcích
-        colJmeno.setCellValueFactory(cellData -> cellData.getValue().jmenoProperty());
-        colPrijmeni.setCellValueFactory(cellData -> cellData.getValue().prijmeniProperty());
+        // *** TOTO JE ZMĚNĚNÁ ČÁST ***
+        // Nová CellValueFactory, která vrací spojené Jméno a Příjmení
+        colJmeno.setCellValueFactory(cellData -> {
+            Kontakt kontakt = cellData.getValue();
+            String celeJmeno = kontakt.getJmeno() + " " + kontakt.getPrijmeni();
+            return new SimpleStringProperty(celeJmeno);
+        });
 
         // Odebrali jsme zobrazení sloupce Telefon a Email z tabulky.
         // Tyto sloupce v FXML souboru už nejsou.
@@ -97,15 +102,18 @@ public class ContactManagerController {
         lblDetailEmail.setText("");
 
         // Přidání listeneru na výběr kontaktu v tabulce
-        tableViewKontakty.getSelectionModel().selectedItemProperty().addListener(
-                new ChangeListener<Kontakt>() {
-                    @Override
-                    public void changed(ObservableValue<? extends Kontakt> observable, Kontakt oldValue, Kontakt newValue) {
-                        zobrazDetailKontaktu(newValue);
-                    }
-                });
+        tableViewKontakty.getSelectionModel().selectedItemProperty().addListener(this::handleKontaktVyber);
     }
-
+    private void handleKontaktVyber(ObservableValue<? extends Kontakt> observable, Kontakt oldValue, Kontakt newValue) {
+        // ... (kód uvnitř metody) ...
+        if (newValue != null) {
+            // Zde už se to jen spojuje, což je OK
+            lblJmenoPrijmeni.setText(newValue.getJmeno() + " " + newValue.getPrijmeni());
+            lblDetailTelefon.setText(newValue.getTelefon());
+            lblDetailEmail.setText(newValue.getEmail());
+        }
+        // ...
+    }
     // Nová metoda pro zobrazení detailů vybraného kontaktu
     private void zobrazDetailKontaktu(Kontakt kontakt) {
         if (kontakt != null) {
