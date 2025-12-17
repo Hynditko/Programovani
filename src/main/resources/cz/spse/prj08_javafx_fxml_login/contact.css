@@ -1,21 +1,21 @@
 /* Globální nastavení pozadí pro okno správce kontaktů */
 .root {
     -fx-font-family: "Segoe UI", sans-serif;
-    -fx-background-color: #f0f4f8;
+    -fx-background-color: #121212;
 }
 
 /* --- Styly pro Správce kontaktů --- */
 
 /* Levý panel pro seznam a formulář */
 .contact-list-pane {
-    -fx-background-color: #ffffff; /* Bílé pozadí */
+    -fx-background-color: #121212; /* Bílé pozadí */
     -fx-border-color: #dddddd;
     -fx-border-width: 0 1px 0 0;
 }
 
 /* Pravý panel pro detaily */
 .contact-detail-pane {
-    -fx-background-color: #f0f4f8;
+    -fx-background-color: #121212;
 }
 
 /* Tabulka */
@@ -31,7 +31,7 @@
 }
 .table-row-cell:selected {
     -fx-background-color: #a4c6ff; /* Světle modrá při výběru */
-    -fx-text-fill: black;
+    -fx-text-fill: white;
 }
 .table-row-cell:hover {
     -fx-background-color: #e0e0e0;
@@ -83,7 +83,7 @@
     -fx-border-width: 0 0 1px 0;
     -fx-border-color: #cccccc;
     -fx-padding: 10 10 10 10;
-    -fx-background-color: #ffffff;
+    -fx-background-color: #1b1b1b;
     -fx-max-width: 400px;
     -fx-min-width: 400px;
     -fx-alignment: center-left;
