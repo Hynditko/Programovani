@@ -8,7 +8,7 @@
 
 /* Levý panel pro seznam a formulář */
 .contact-list-pane {
-    -fx-background-color: #121212; /* Bílé pozadí */
+    -fx-background-color: #121212;
     -fx-border-color: #dddddd;
     -fx-border-width: 0 1px 0 0;
 }
@@ -41,17 +41,17 @@
 .header-label {
     -fx-font-size: 24px;
     -fx-font-weight: bold;
-    -fx-text-fill: #333333;
+    -fx-text-fill: #e0e0e0;
     -fx-padding: 0 0 10 0;
 }
 .subheader-label {
     -fx-font-size: 16px;
     -fx-font-weight: bold;
-    -fx-text-fill: #555555;
+    -fx-text-fill: #e0e0e0;
     -fx-padding: 10 0 5 0;
 }
 .text-field {
-    -fx-background-color: #eeeeee;
+    -fx-background-color: #555555;
     -fx-border-radius: 5px;
     -fx-padding: 5px;
 }
@@ -73,13 +73,13 @@
 .detail-name {
     -fx-font-size: 30px;
     -fx-font-weight: bold;
-    -fx-text-fill: #333333;
+    -fx-text-fill: white;
     -fx-padding: 10 0 20 0;
 }
 
 .detail-info-phone, .detail-info-email {
     -fx-font-size: 18px;
-    -fx-text-fill: #555555;
+    -fx-text-fill: #cccccc;
     -fx-border-width: 0 0 1px 0;
     -fx-border-color: #cccccc;
     -fx-padding: 10 10 10 10;
