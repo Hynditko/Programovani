@@ -7,9 +7,9 @@
 /* --- Styly pro Správce kontaktů --- */
 
 /* Levý panel pro seznam a formulář */
-.contact-list-pane {
+.contact-list {
     -fx-background-color: #121212;
-    -fx-border-color: #dddddd;
+    -fx-border-color: #121212;
     -fx-border-width: 0 1px 0 0;
 }
 
@@ -18,23 +18,79 @@
     -fx-background-color: #121212;
 }
 
-/* Tabulka */
+/* Celkové pozadí tabulky */
 .table-view {
+    -fx-background-color: #2f3136; /* Discord background */
+    -fx-border-color: #202225;
+    -fx-border-width: 1px;
+}
+
+/* Pozadí prázdných řádků (řeší váš problém s bílou plochou) */
+.table-view .placeholder .label {
+    -fx-text-fill: #b9bbbe;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:horizontal {
+    -fx-background-color: #2f3136;
+}
+
+/* Buňky tabulky */
+.table-row-cell {
+    -fx-background-color: #2f3136;
+    -fx-text-fill: #dcddde;
     -fx-border-color: transparent;
 }
-.table-view .column-header-background {
-    -fx-background-color: #4e8cff;
-}
-.table-view .column-header .label {
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-}
+
+/* Označený řádek (Discord modrá/šedá) */
 .table-row-cell:selected {
-    -fx-background-color: #a4c6ff; /* Světle modrá při výběru */
+    -fx-background-color: #4f545c;
     -fx-text-fill: white;
 }
+
+/* Header tabulky */
+.table-view .column-header, .table-view .column-header-background {
+    -fx-background-color: #202225;
+}
+
+/* Základní barva textu v buňkách tabulky */
+.table-view .table-column {
+    -fx-alignment: CENTER-LEFT;
+}
+
+.table-row-cell {
+    -fx-background-color: #2f3136; /* Discord tmavá šedá */
+}
+
+/* Toto zajistí, že text bude vidět i bez označení */
+.table-row-cell .text {
+    -fx-fill: #dcddde;
+}
+
+/* Barva textu při najetí myší */
 .table-row-cell:hover {
-    -fx-background-color: #e0e0e0;
+    -fx-background-color: #393c43;
+}
+
+/* Barva textu při výběru */
+.table-row-cell:selected {
+    -fx-background-color: #4f545c;
+}
+
+.table-row-cell:selected .text {
+    -fx-fill: #ffffff;
+}
+
+/* Oprava pozadí prázdné tabulky (bílá plocha) */
+.table-view .virtual-flow .clipped-container .sheet,
+.table-view .placeholder,
+.table-view .corner {
+    -fx-background-color: #2f3136;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #8e9297;
+    -fx-font-weight: bold;
 }
 
 /* Textové labely a nadpisy */
@@ -54,9 +110,22 @@
     -fx-background-color: #555555;
     -fx-border-radius: 5px;
     -fx-padding: 5px;
+    -fx-text-fill: white; /* PŘIDÁNO: Aby byl text bílý a čitelný */
 }
 
 /* Tlačítka */
+/* Tlačítko smazat */
+.button.button-delete {
+    -fx-background-color: #ff4d4d;
+    -fx-text-fill: white;
+}
+
+/* Box pro tlačítka */
+.buttons-hbox {
+    -fx-spacing: 10;
+    -fx-padding: 5;
+    -fx-alignment: center;
+}
 .button {
     -fx-background-color: #4e8cff;
     -fx-text-fill: white;
@@ -93,4 +162,45 @@
 
 .status-label {
     -fx-text-fill: firebrick;
+}
+
+/* Styly pro editační pole v detailu */
+.edit-field {
+    -fx-background-color: #40444b;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-background-radius: 5px;
+    -fx-border-color: #202225;
+    -fx-border-radius: 5px;
+}
+
+/* Tlačítko Uložit */
+.button-save {
+    -fx-background-color: #43b581; /* Zelená */
+    -fx-text-fill: white;
+}
+.button-save:hover {
+    -fx-background-color: #3ca374;
+}
+
+/* Tlačítko Zrušit */
+.button-cancel {
+    -fx-background-color: #72767d; /* Šedá */
+    -fx-text-fill: white;
+}
+.button-cancel:hover {
+    -fx-background-color: #5f6269;
+}
+
+/* PŘIDÁNO NA KONEC: Úplné skrytí hlavičky tabulky */
+.table-view .column-header-background {
+    -fx-max-height: 0;
+    -fx-pref-height: 0;
+    -fx-min-height: 0;
+    visibility: hidden;
+}
+.table-view .column-header {
+    -fx-max-height: 0;
+    -fx-pref-height: 0;
+    visibility: hidden;
 }

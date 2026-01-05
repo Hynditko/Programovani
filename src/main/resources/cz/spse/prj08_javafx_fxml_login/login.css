@@ -1,5 +1,5 @@
 .root {
-    -fx-background-image: url(images/IMG_5201.png);
+    -fx-background-image: url(images/6057485.jpg);
     -fx-background-size: cover;
     -fx-background-repeat: norepeat;
 
@@ -7,7 +7,7 @@
 #login-text {
     -fx-font-size: 32px;
     -fx-font-family: "Comic Sans MS";
-    -fx-text-fill: #61a2b1;
+    -fx-text-fill: #4DF0FF;
     -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6,0.0,0,2);
 }
 
@@ -22,11 +22,11 @@
     -fx-font-family: "Comic Sans MS";
     -fx-font-weight: bold;
     -fx-font-size: 16px;
-    -fx-background-color: linear-gradient(#61a2b1, #245858);
+    -fx-background-color: linear-gradient(#3A7CFF, #4DF0FF);
     -fx-effect: dropshadow( three-pass-box, rgba(0,0,0,0.6) , 5,0.0,0,1);
 }
 .button:hover {
-    -fx-background-color: linear-gradient(#245858, #61a2b1);
+    -fx-background-color: linear-gradient(#4DF0FF, #3A7CFF);
 }
 .button:pressed {
     -fx-translate-x: -4px;
